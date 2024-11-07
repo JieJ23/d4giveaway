@@ -24,7 +24,9 @@ export const getColor = (x) => {
 };
 
 export function MainTable({ data, load }) {
-  const updatedArray = allRunes.map((item) => {
+  const availableRunes = allRunes.filter((obj) => obj.Count > 0);
+
+  const updatedArray = availableRunes.map((item) => {
     const subtractItem = data.find((sub) => sub.RuneName === item.RuneName);
 
     if (subtractItem) {
