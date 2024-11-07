@@ -52,7 +52,7 @@ export function MainTable({ data, load }) {
         <main className="flex flex-col gap-6">
           <section className="w-full max-w-[1000px] mx-auto rounded-xl px-2 font-customCin">
             <Card className="h-full w-full px-6 rounded-xl bg-transparent">
-              <table className="w-full min-w-max table-auto text-left bg-transparent backdrop-blur-sm text-white">
+              <table className="w-full min-w-max table-auto text-left bg-transparent text-white">
                 <thead>
                   <tr className="border-b-[1px]">
                     {TABLE_HEAD.map((item, index) => (
@@ -73,24 +73,24 @@ export function MainTable({ data, load }) {
                         {index + 1}.
                       </td>
                       <td
-                        className="text-[14px] min-w-[50px]"
+                        className="text-[13px] min-w-[50px]"
                         style={{ color: getColor(obj.Rarity) }}
                       >
                         {obj.RuneName}
                       </td>
-                      <td>
+                      <td className="min-w-[50px]">
                         <Avatar src={`/${obj.Type}.png`} size="xs" />
                       </td>
                       <td
-                        className="text-[12px]"
+                        className="text-[12px] min-w-[100px]"
                         style={{ color: getColor(obj.Rarity) }}
                       >
                         {obj.Rarity}
                       </td>
-                      <td className="text-[12px] text-gray-400">
+                      <td className="text-[12px] text-gray-400 min-w-[150px]">
                         Rune of {obj.Type}
                       </td>
-                      <td className="text-[14px]">x {obj.Count}</td>
+                      <td className="text-[12px]">x {obj.Count}</td>
                     </tr>
                   ))}
                   <TableSpace />
@@ -100,7 +100,7 @@ export function MainTable({ data, load }) {
           </section>
           <section className="w-full max-w-[1000px] mx-auto rounded-xl px-2 font-customCin">
             <Card className="h-full w-full px-6 rounded-xl bg-transparent">
-              <table className="w-full min-w-max table-auto text-left bg-transparent backdrop-blur-sm text-white">
+              <table className="w-full min-w-max table-auto text-left bg-transparent text-white">
                 <thead>
                   <tr className="border-b-[1px]">
                     {TABLE_HEAD.map((item, index) => (
@@ -121,24 +121,24 @@ export function MainTable({ data, load }) {
                         {index + 1}.
                       </td>
                       <td
-                        className="text-[14px] min-w-[50px]"
+                        className="text-[13px] min-w-[50px]"
                         style={{ color: getColor(obj.Rarity) }}
                       >
                         {obj.RuneName}
                       </td>
-                      <td>
+                      <td className="min-w-[50px]">
                         <Avatar src={`/${obj.Type}.png`} size="xs" />
                       </td>
                       <td
-                        className="text-[12px]"
+                        className="text-[12px] min-w-[100px]"
                         style={{ color: getColor(obj.Rarity) }}
                       >
                         {obj.Rarity}
                       </td>
-                      <td className="text-[12px] text-gray-400">
+                      <td className="text-[12px] text-gray-400 min-w-[150px]">
                         Rune of {obj.Type}
                       </td>
-                      <td className="text-[14px]">x {obj.Count}</td>
+                      <td className="text-[12px]">x {obj.Count}</td>
                     </tr>
                   ))}
                   <TableSpace />
