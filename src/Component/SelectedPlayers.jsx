@@ -9,7 +9,6 @@ export default function SelectedPlayer({ data, load }) {
         ""
       ) : (
         <section className="max-w-[1000px] mx-auto flex items-center flex-wrap gap-2 font-customCin text-white px-4">
-          {data.length > 0 && <Spinner color="blue" />}
           {data.map((obj, index) => (
             <div
               className={`flex flex-col ${
@@ -36,6 +35,7 @@ export default function SelectedPlayer({ data, load }) {
               </div>
             </div>
           ))}
+          {data.length > 0 && <Spinner color="blue" />}
         </section>
       )}
     </>
