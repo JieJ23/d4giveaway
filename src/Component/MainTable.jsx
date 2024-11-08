@@ -25,15 +25,20 @@ export const getColor = (x) => {
 
 export function MainTable({ data, load }) {
   const updatedArray = allRunes.map((item) => {
-    const subtractItem = data.find((sub) => sub.RuneName === item.RuneName);
+    // Find all matching items in data with the same RuneName
+    const matchingItems = data.filter((sub) => sub.RuneName === item.RuneName);
 
-    if (subtractItem) {
-      return {
-        ...item, // Keep other properties unchanged
-        Count: item.Count - subtractItem.Count,
-      };
-    }
-    return item;
+    // Calculate the total Count to subtract
+    const totalCountToSubtract = matchingItems.reduce(
+      (total, sub) => total + sub.Count,
+      0
+    );
+
+    // Return the updated item
+    return {
+      ...item, // Keep other properties unchanged
+      Count: item.Count - totalCountToSubtract,
+    };
   });
 
   const ritualRunes = updatedArray.filter(

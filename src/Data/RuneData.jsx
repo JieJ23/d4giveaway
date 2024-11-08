@@ -9,7 +9,7 @@ export const allRunes = [
     RuneName: `Bac`,
     Rarity: `Legendary`,
     Type: `Ritual`,
-    Count: 1,
+    Count: 2,
   },
   {
     RuneName: `Lith`,
