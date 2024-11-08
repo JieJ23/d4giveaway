@@ -24,9 +24,7 @@ export const getColor = (x) => {
 };
 
 export function MainTable({ data, load }) {
-  const availableRunes = allRunes.filter((obj) => obj.Count > 0);
-
-  const updatedArray = availableRunes.map((item) => {
+  const updatedArray = allRunes.map((item) => {
     const subtractItem = data.find((sub) => sub.RuneName === item.RuneName);
 
     if (subtractItem) {
@@ -38,9 +36,11 @@ export function MainTable({ data, load }) {
     return item;
   });
 
-  const ritualRunes = updatedArray.filter((obj) => obj.Type === `Ritual`);
+  const ritualRunes = updatedArray.filter(
+    (obj) => obj.Type === `Ritual` && obj.Count > 0
+  );
   const invocationRunes = updatedArray.filter(
-    (obj) => obj.Type === `Invocation`
+    (obj) => obj.Type === `Invocation` && obj.Count > 0
   );
 
   return (
