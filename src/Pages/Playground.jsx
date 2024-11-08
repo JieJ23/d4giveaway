@@ -35,7 +35,7 @@ export default function Playground() {
         style={{ backgroundImage: "url('/mainBG.png')" }}
       />
       {/*  */}
-      <section className="flex justify-center pt-4 gap-16">
+      <section className="flex flex-wrap justify-center pt-4 gap-10">
         <Card
           variant="gradient"
           className="w-full max-w-[450px] p-8 bg-transparent backdrop-blur-md text-white border-[1px] border-white/30 relative"
@@ -50,14 +50,14 @@ export default function Playground() {
             color="transparent"
             className="m-0 mb-8 rounded-none border-b border-white/10 pb-8 text-center"
           >
-            <img src="/d4logo.png" />
+            <img src="/d4logo.png" className="w-[250px] mx-auto" />
             <Typography
               variant="h1"
               color="white"
               className="mt-6 flex justify-center gap-1 text-7xl font-normal font-customCin"
             >
-              <span className="mt-2 text-4xl">$</span>109{" "}
-              <span className="self-end text-4xl">.99</span>
+              <span className="mt-2 text-2xl">$</span>109{" "}
+              <span className="self-end text-2xl">.99</span>
             </Typography>
             <Typography className="text-white font-customCin">
               Ultimate Season Pass
@@ -173,14 +173,14 @@ export default function Playground() {
             color="transparent"
             className="m-0 mb-8 rounded-none border-b border-white/10 pb-8 text-center"
           >
-            <img src="/d4logo.png" />
+            <img src="/d4logo.png" className="w-[250px] mx-auto" />
             <Typography
               variant="h1"
               color="white"
               className="mt-6 flex justify-center gap-1 text-7xl font-normal font-customCin"
             >
-              <span className="mt-2 text-4xl">$</span>89{" "}
-              <span className="self-end text-4xl">.99</span>
+              <span className="mt-2 text-2xl">$</span>89{" "}
+              <span className="self-end text-2xl">.99</span>
             </Typography>
             <Typography className="text-white font-customCin">
               Deluxe Season Pass
@@ -262,14 +262,14 @@ export default function Playground() {
             color="transparent"
             className="m-0 mb-8 rounded-none border-b border-white/10 pb-8 text-center"
           >
-            <img src="/d4logo.png" />
+            <img src="/d4logo.png" className="w-[250px] mx-auto" />
             <Typography
               variant="h1"
               color="white"
               className="mt-6 flex justify-center gap-1 text-7xl font-normal font-customCin"
             >
-              <span className="mt-2 text-4xl">$</span>49{" "}
-              <span className="self-end text-4xl">.99</span>
+              <span className="mt-2 text-2xl">$</span>49{" "}
+              <span className="self-end text-2xl">.99</span>
             </Typography>
             <Typography className="text-white font-customCin">
               Standard Season Pass
