@@ -3,6 +3,7 @@
     src: url("./assets/fonts/exocet.woff");
 }
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
