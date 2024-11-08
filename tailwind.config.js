@@ -9,7 +9,9 @@ module.exports = withMT({
   ], theme: {
     extend: {
       fontFamily: {
-        customCin: ["Cinzel"]
+        customExo: ["Exocet"],
+        customCin: ["Cinzel"],
+        customPt: ["PT Serif"]
       }
     },
   },
