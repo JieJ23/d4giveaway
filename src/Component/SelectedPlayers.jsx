@@ -12,12 +12,20 @@ export default function SelectedPlayer({ data, load }) {
           {data.length > 0 && <Spinner color="blue" />}
           {data.map((obj, index) => (
             <div
-              className="flex flex-col bg-[black] py-1 px-2 rounded-md items-center border-[1px] border-white/40"
+              className={`flex flex-col ${
+                obj.Count < 0 && `border-[#0ba886]`
+              } py-1 px-2 rounded-md items-center border-[1px] border-white/40`}
               key={index}
             >
-              <div className="text-[10px]" key={index}>
-                {obj.Player} Claimed
-              </div>
+              {obj.Count < 0 ? (
+                <div className="text-[10px]" key={index}>
+                  {obj.Player} Donated
+                </div>
+              ) : (
+                <div className="text-[10px]" key={index}>
+                  {obj.Player} Claimed
+                </div>
+              )}
               <div className="flex justify-center items-center gap-2">
                 <Avatar src={`/${grabRunes(obj.RuneName)}.png`} size="xs" />
                 <div className="text-[12px]">{obj.RuneName}</div>
