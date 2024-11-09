@@ -33,9 +33,13 @@ export default function Items() {
   const [imagePreview, setImagePreview] = useState(null);
   const [color, setColor] = useState("#e39d2b"); // Default color
   const [category, setCategory] = useState(0);
+  const [ga, setGa] = useState(0);
 
   const handleCategoryChange = (num) => {
     setCategory(num);
+  };
+  const handleGAChange = (num) => {
+    setGa(num);
   };
 
   const [formData, setFormData] = useState({
@@ -83,7 +87,7 @@ export default function Items() {
       <section className="flex justify-center py-16">
         <div className={`relative w-[400px] flex justify-center items-center`}>
           {switchColor(category)}
-          <div className="absolute top-6 right-8 h-[100px] w-[100px]">
+          <div className="absolute top-4 right-6 h-[110px] w-[100px]">
             <img src={imagePreview} />
           </div>
           <section className="z-30 h-full w-full p-6">
@@ -92,7 +96,16 @@ export default function Items() {
               style={{ color: color }}
             >
               {formData.itemName}
+              {Array.from({ length: ga }, (_, index) => (
+                <Avatar
+                  key={index}
+                  src="/af.png"
+                  size="xs"
+                  className="mx-0.5"
+                />
+              ))}
             </div>
+
             <div
               className="font-customPt text-[16px] w-[65%]"
               style={{ color: color }}
@@ -100,7 +113,7 @@ export default function Items() {
               {formData.itemType}
             </div>
 
-            <img src="/half_div.png" className="py-1" />
+            <img src="/half_div.png" className="py-1 pb-2" />
             <div className="font-customPt text-[16px] text-[#bab0a3]">
               <Avatar
                 src="/stat.png"
@@ -177,13 +190,15 @@ export default function Items() {
       </section>
 
       <section className="text-center  gap-2 flex flex-col px-10">
-        <div className="text-white font-customCin">Upload Photo</div>
-        <input
-          type="file"
-          accept="image/*"
-          className="font-serif text-white"
-          onChange={handleFileChange}
-        />
+        <div className="flex items-center gap-2">
+          <div className="text-white font-customCin">Upload Photo</div>
+          <input
+            type="file"
+            accept="image/*"
+            className="font-serif text-white"
+            onChange={handleFileChange}
+          />
+        </div>
 
         <section className="grid grid-cols-4 gap-1">
           <Button
@@ -245,6 +260,54 @@ export default function Items() {
             Selected Color: <span style={{ color: color }}>{color}</span>
           </p>
         </div>
+
+        <section className="flex gap-1">
+          <Button
+            className="font-customCin"
+            onClick={() => handleGAChange(0)}
+            size="sm"
+            color="black"
+            variant="gradient"
+          >
+            0 GA
+          </Button>
+          <Button
+            className="font-customCin"
+            onClick={() => handleGAChange(1)}
+            size="sm"
+            color="black"
+            variant="gradient"
+          >
+            1 GA
+          </Button>
+          <Button
+            className="font-customCin"
+            onClick={() => handleGAChange(2)}
+            size="sm"
+            color="black"
+            variant="gradient"
+          >
+            2 GA
+          </Button>
+          <Button
+            className="font-customCin"
+            onClick={() => handleGAChange(3)}
+            size="sm"
+            color="black"
+            variant="gradient"
+          >
+            3 GA
+          </Button>
+          <Button
+            className="font-customCin"
+            onClick={() => handleGAChange(4)}
+            size="sm"
+            color="black"
+            variant="gradient"
+          >
+            4 GA
+          </Button>
+        </section>
 
         <div className="font-customCin">
           <Input
