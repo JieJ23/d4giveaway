@@ -1,8 +1,43 @@
-import { Avatar, Input } from "@material-tailwind/react";
+import { Avatar, Input, Button } from "@material-tailwind/react";
 import { useState } from "react";
+import {
+  Purplecolor,
+  Orangecolor,
+  Redcolor,
+  Greencolor,
+  Tealcolor,
+  Pinkcolor,
+  Yellowcolor,
+} from "./ItemsBatch";
+
+const switchColor = (color) => {
+  switch (color) {
+    case 0:
+      return <Orangecolor />;
+    case 1:
+      return <Redcolor />;
+    case 2:
+      return <Purplecolor />;
+    case 3:
+      return <Pinkcolor />;
+    case 4:
+      return <Yellowcolor />;
+    case 5:
+      return <Greencolor />;
+    case 6:
+      return <Tealcolor />;
+  }
+};
 
 export default function Items() {
   const [imagePreview, setImagePreview] = useState(null);
+  const [color, setColor] = useState("#e39d2b"); // Default color
+  const [category, setCategory] = useState(0);
+
+  const handleCategoryChange = (num) => {
+    setCategory(num);
+  };
+
   const [formData, setFormData] = useState({
     itemName: "The Grandfather",
     itemType: "Ancestral Mythic Unique Two-Handed Sword",
@@ -19,6 +54,10 @@ export default function Items() {
     level: `35`,
     class: `Barbarian`,
   });
+
+  const handleColorChange = (e) => {
+    setColor(e.target.value); // Update the state with the selected color
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target; // Get the name and value from the input
@@ -43,28 +82,21 @@ export default function Items() {
     <main className="flex flex-wrap items-center justify-center max-w-[1200px] gap-x-16 mx-auto pt-10">
       <section className="flex justify-center py-16">
         <div className={`relative w-[400px] flex justify-center items-center`}>
-          <div
-            className="absolute h-full w-full -z-10"
-            style={{
-              borderImage: "url(/one.png) 100 fill", // URL to the image and slicing settings
-              borderImageWidth: "50px", // Set the width of the border image
-            }}
-          />
-          <div
-            className="absolute h-full w-full"
-            style={{
-              borderImage: "url(/red.png) 100 fill", // URL to the image and slicing settings
-              borderImageWidth: "55px", // Set the width of the border image
-            }}
-          />
+          {switchColor(category)}
           <div className="absolute top-6 right-8 h-[100px] w-[100px]">
             <img src={imagePreview} />
           </div>
           <section className="z-30 h-full w-full p-6">
-            <div className="font-customExo text-[20px] text-[#e39d2b] w-[65%]">
+            <div
+              className="font-customExo text-[20px] w-[65%]"
+              style={{ color: color }}
+            >
               {formData.itemName}
             </div>
-            <div className="font-customPt text-[16px] text-[#e39d2b] w-[65%]">
+            <div
+              className="font-customPt text-[16px] w-[65%]"
+              style={{ color: color }}
+            >
               {formData.itemType}
             </div>
 
@@ -118,7 +150,7 @@ export default function Items() {
               </span>
               {formData.ma4}
             </div>
-            <div className="font-customPt text-[16px] text-[#e39d2b]">
+            <div className="font-customPt text-[16px]" style={{ color: color }}>
               <Avatar src="/affix.png" size="xs" className="w-[12px] me-1" />
               {formData.ma5}
             </div>
@@ -152,6 +184,67 @@ export default function Items() {
           className="font-serif text-white"
           onChange={handleFileChange}
         />
+
+        <section className="grid grid-cols-4 gap-1">
+          <Button
+            size="sm"
+            color="orange"
+            onClick={() => handleCategoryChange(0)}
+          >
+            Orange
+          </Button>
+          <Button size="sm" color="red" onClick={() => handleCategoryChange(1)}>
+            Red
+          </Button>
+          <Button
+            size="sm"
+            color="purple"
+            onClick={() => handleCategoryChange(2)}
+          >
+            Purple
+          </Button>
+          <Button
+            size="sm"
+            color="pink"
+            onClick={() => handleCategoryChange(3)}
+          >
+            Pink
+          </Button>
+          <Button
+            size="sm"
+            color="yellow"
+            onClick={() => handleCategoryChange(4)}
+          >
+            Yellow
+          </Button>
+          <Button
+            size="sm"
+            color="green"
+            onClick={() => handleCategoryChange(5)}
+          >
+            Green
+          </Button>
+          <Button
+            size="sm"
+            color="teal"
+            onClick={() => handleCategoryChange(6)}
+          >
+            Teal
+          </Button>
+        </section>
+
+        <div className="flex items-center justify-start text-white font-customCin gap-2">
+          <input
+            type="color"
+            id="colorPicker" // Use a unique ID for the input
+            value={color}
+            onChange={handleColorChange} // Update the state when the user selects a color
+            className="border-2 p-2"
+          />
+          <p className="text-[13px]">
+            Selected Color: <span style={{ color: color }}>{color}</span>
+          </p>
+        </div>
 
         <div className="font-customCin">
           <Input
