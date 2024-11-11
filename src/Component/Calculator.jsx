@@ -130,9 +130,11 @@ export default function Calculator() {
               const newArray = [...calculateMW(value, 0, ga)]; // Create a shallow copy
               newArray.pop(); // Remove the last item
               newArray.pop(); // Remove the second last item
+              newArray.pop(); // Remove the second last item
 
               newArray.splice(3, 0, "-"); // Add 'x' at index 3
               newArray.splice(7, 0, "-"); // Add 'y' at index 5
+              newArray.splice(11, 0, "-"); // Add 'y' at index 5
 
               return newArray.map((item, index) => (
                 <td key={index}>
@@ -147,13 +149,13 @@ export default function Calculator() {
               const newArray = [...calculateMW(value, 1, ga)]; // Create a shallow copy
               newArray.pop(); // Remove the last item
               newArray.pop(); // Remove the second last item
-              newArray.splice(3, 0, "-"); // Add 'x' at index 3
               newArray.splice(7, 0, "-"); // Add 'y' at index 7
+              newArray.splice(11, 0, "-"); // Add 'y' at index 5
 
               return newArray.map((item, index) => (
                 <td key={index}>
                   <div className="pb-2 text-[cyan]">
-                    {index < 3 ? `-` : item}
+                    {index < 2 ? `-` : item}
                   </div>
                 </td>
               ));
@@ -164,7 +166,7 @@ export default function Calculator() {
             {(() => {
               const newArray = [...calculateMW(value, 2, ga)]; // Create a shallow copy
               newArray.pop(); // Remove the last item
-              newArray.splice(7, 0, "-"); // Add 'x' at the 7th position (index 7)
+              newArray.splice(11, 0, "-"); // Add 'x' at the 7th position (index 7)
 
               return newArray.map((item, index) => (
                 <td key={index}>
