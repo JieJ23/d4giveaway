@@ -130,6 +130,7 @@ export default function Calculator() {
               const newArray = [...calculateMW(value, 0, ga)]; // Create a shallow copy
               newArray.pop(); // Remove the last item
               newArray.pop(); // Remove the second last item
+
               newArray.splice(3, 0, "-"); // Add 'x' at index 3
               newArray.splice(7, 0, "-"); // Add 'y' at index 5
 
