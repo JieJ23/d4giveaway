@@ -4,7 +4,7 @@ import { Button } from "@material-tailwind/react";
 export function Header() {
   return (
     <div className="py-5 flex flex-row gap-2 justify-center">
-      <Link to={"/"}>
+      <Link to={"/Playground"}>
         <Button
           className="font-customCin text-white border-white/50 text-[13px]"
           variant="outlined"
@@ -12,7 +12,7 @@ export function Header() {
           Item Generator
         </Button>
       </Link>
-      <Link to={"/MasterworkingCalculator"}>
+      <Link to={"/"}>
         <Button
           className="font-customCin text-white border-white/50 text-[13px]"
           variant="outlined"
