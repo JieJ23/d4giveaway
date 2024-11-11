@@ -17,8 +17,6 @@ const TABLE_HEAD = [
   "12",
 ];
 
-const TABLE_ROWS = [{}];
-
 function calculateMW(baseNum, hit, ga) {
   let startingValue = +ga || +baseNum;
   let recordValue;
@@ -52,11 +50,9 @@ function calculateMW(baseNum, hit, ga) {
   return obj;
 }
 
-console.log(calculateMW(457, 3, 685));
-
 export default function Calculator() {
-  const [value, setValue] = useState(457);
-  const [ga, setGa] = useState(685);
+  const [value, setValue] = useState(0);
+  const [ga, setGa] = useState(0);
 
   return (
     <section className="px-2">
