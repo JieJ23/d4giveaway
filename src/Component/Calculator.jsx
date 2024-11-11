@@ -155,7 +155,7 @@ export default function Calculator() {
               return newArray.map((item, index) => (
                 <td key={index}>
                   <div className="pb-2 text-[cyan]">
-                    {index < 2 ? `-` : item}
+                    {index < 3 ? `-` : item}
                   </div>
                 </td>
               ));
