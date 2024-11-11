@@ -2,7 +2,7 @@ import { Card, CardBody, Input } from "@material-tailwind/react";
 import { useState } from "react";
 
 const TABLE_HEAD = [
-  "Masterwork",
+  "MW",
   "1",
   "2",
   "3",
@@ -113,84 +113,86 @@ export default function Calculator() {
       </section>
 
       {/*  */}
-      <table className="w-full table-auto text-left max-w-[1000px] mx-auto mt-10 font-customCin text-white">
-        <thead>
-          <tr className="border-b-[1px]">
-            {TABLE_HEAD.map((head) => (
-              <th key={head} className="py-2">
-                <div className="">{head}</div>
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>0x - 25% Buff</td>
-            {(() => {
-              const newArray = [...calculateMW(value, 0, ga)]; // Create a shallow copy
-              newArray.pop(); // Remove the last item
-              newArray.pop(); // Remove the second last item
-              newArray.pop(); // Remove the second last item
+      <section className="w-full max-w-[1200px] overflow-x-auto mt-10 px-2 mx-auto">
+        <table className="w-full min-w-full text-center font-customCin text-white">
+          <thead>
+            <tr className="border-b-[1px]">
+              {TABLE_HEAD.map((head) => (
+                <th key={head} className="py-2">
+                  <div>{head}</div>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="min-w-[50px]">0x</td>
+              {(() => {
+                const newArray = [...calculateMW(value, 0, ga)]; // Create a shallow copy
+                newArray.pop(); // Remove the last item
+                newArray.pop(); // Remove the second last item
+                newArray.pop(); // Remove the second last item
 
-              newArray.splice(3, 0, "-"); // Add 'x' at index 3
-              newArray.splice(7, 0, "-"); // Add 'y' at index 5
-              newArray.splice(11, 0, "-"); // Add 'y' at index 5
+                newArray.splice(3, 0, "-"); // Add 'x' at index 3
+                newArray.splice(7, 0, "-"); // Add 'y' at index 5
+                newArray.splice(11, 0, "-"); // Add 'y' at index 5
 
-              return newArray.map((item, index) => (
-                <td key={index}>
-                  <div className="py-2 w-[50px]">{item}</div>
-                </td>
-              ));
-            })()}
-          </tr>
-          <tr>
-            <td>1x - 25% Buff</td>
-            {(() => {
-              const newArray = [...calculateMW(value, 1, ga)]; // Create a shallow copy
-              newArray.pop(); // Remove the last item
-              newArray.pop(); // Remove the second last item
-              newArray.splice(7, 0, "-"); // Add 'y' at index 7
-              newArray.splice(11, 0, "-"); // Add 'y' at index 5
+                return newArray.map((item, index) => (
+                  <td key={index} className="min-w-[50px]">
+                    <div className="py-2">{item}</div>
+                  </td>
+                ));
+              })()}
+            </tr>
+            <tr>
+              <td>1x</td>
+              {(() => {
+                const newArray = [...calculateMW(value, 1, ga)]; // Create a shallow copy
+                newArray.pop(); // Remove the last item
+                newArray.pop(); // Remove the second last item
+                newArray.splice(7, 0, "-"); // Add 'y' at index 7
+                newArray.splice(11, 0, "-"); // Add 'y' at index 5
 
-              return newArray.map((item, index) => (
-                <td key={index}>
-                  <div className="pb-2 text-[cyan]">
-                    {index < 3 ? `-` : item}
-                  </div>
-                </td>
-              ));
-            })()}
-          </tr>
-          <tr>
-            <td>2x - 25% Buff</td>
-            {(() => {
-              const newArray = [...calculateMW(value, 2, ga)]; // Create a shallow copy
-              newArray.pop(); // Remove the last item
-              newArray.splice(11, 0, "-"); // Add 'x' at the 7th position (index 7)
+                return newArray.map((item, index) => (
+                  <td key={index}>
+                    <div className="pb-2 text-[cyan]">
+                      {index < 3 ? `-` : item}
+                    </div>
+                  </td>
+                ));
+              })()}
+            </tr>
+            <tr>
+              <td>2x</td>
+              {(() => {
+                const newArray = [...calculateMW(value, 2, ga)]; // Create a shallow copy
+                newArray.pop(); // Remove the last item
+                newArray.splice(11, 0, "-"); // Add 'x' at the 7th position (index 7)
 
-              return newArray.map((item, index) => (
-                <td key={index}>
-                  <div className="pb-2 text-[yellow]">
-                    {index < 7 ? `-` : item}
-                  </div>
-                </td>
-              ));
-            })()}
-          </tr>
-          <tr>
-            <td>3x - 25% Buff</td>
-            {calculateMW(value, 3, ga).map((item, index) => {
-              return (
-                <td>
-                  <div className=" pb-2 text-[orange]">
-                    {index < 11 ? `-` : item}
-                  </div>
-                </td>
-              );
-            })}
-          </tr>
-        </tbody>
-      </table>
+                return newArray.map((item, index) => (
+                  <td key={index}>
+                    <div className="pb-2 text-[yellow]">
+                      {index < 7 ? `-` : item}
+                    </div>
+                  </td>
+                ));
+              })()}
+            </tr>
+            <tr>
+              <td>3x</td>
+              {calculateMW(value, 3, ga).map((item, index) => {
+                return (
+                  <td>
+                    <div className=" pb-2 text-[orange]">
+                      {index < 11 ? `-` : item}
+                    </div>
+                  </td>
+                );
+              })}
+            </tr>
+          </tbody>
+        </table>
+      </section>
       {/*  */}
     </section>
   );
