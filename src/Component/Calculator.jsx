@@ -29,27 +29,20 @@ function calculateMW(baseNum, hit, ga) {
   let obj = [];
 
   for (let i = 0; i < 12; i++) {
-    if (i === 3 && hit >= 1) {
+    if (
+      (i === 3 && hit >= 1) ||
+      (i === 7 && hit >= 2) ||
+      (i === 11 && hit >= 3)
+    ) {
       startingValue += extra;
-      recordValue = startingValue.toFixed(1);
-      obj.push(recordValue);
-      continue;
-    } else if (i === 7 && hit >= 2) {
-      startingValue += extra;
-      recordValue = startingValue.toFixed(1);
-      obj.push(recordValue);
-      continue;
-    } else if (i === 11 && hit >= 3) {
-      startingValue += extra;
-      recordValue = startingValue.toFixed(1);
-      obj.push(recordValue);
-      continue;
     } else {
       startingValue += standard;
-      recordValue = startingValue.toFixed(1);
-      obj.push(recordValue);
     }
+
+    recordValue = startingValue.toFixed(1);
+    obj.push(recordValue);
   }
+
   return obj;
 }
 
@@ -133,37 +126,53 @@ export default function Calculator() {
         <tbody>
           <tr>
             <td>0x - 25% Buff</td>
-            {calculateMW(value, 0, ga).map((item, index) => {
-              return (
-                <td>
+            {(() => {
+              const newArray = [...calculateMW(value, 0, ga)]; // Create a shallow copy
+              newArray.pop(); // Remove the last item
+              newArray.pop(); // Remove the second last item
+              newArray.splice(3, 0, "-"); // Add 'x' at index 3
+              newArray.splice(7, 0, "-"); // Add 'y' at index 5
+
+              return newArray.map((item, index) => (
+                <td key={index}>
                   <div className="py-2">{item}</div>
                 </td>
-              );
-            })}
+              ));
+            })()}
           </tr>
           <tr>
             <td>1x - 25% Buff</td>
-            {calculateMW(value, 1, ga).map((item, index) => {
-              return (
-                <td>
-                  <div className=" pb-2 text-[cyan]">
+            {(() => {
+              const newArray = [...calculateMW(value, 1, ga)]; // Create a shallow copy
+              newArray.pop(); // Remove the last item
+              newArray.pop(); // Remove the second last item
+              newArray.splice(3, 0, "-"); // Add 'x' at index 3
+              newArray.splice(7, 0, "-"); // Add 'y' at index 7
+
+              return newArray.map((item, index) => (
+                <td key={index}>
+                  <div className="pb-2 text-[cyan]">
                     {index < 3 ? `-` : item}
                   </div>
                 </td>
-              );
-            })}
+              ));
+            })()}
           </tr>
           <tr>
             <td>2x - 25% Buff</td>
-            {calculateMW(value, 2, ga).map((item, index) => {
-              return (
-                <td>
-                  <div className=" pb-2 text-[yellow]">
+            {(() => {
+              const newArray = [...calculateMW(value, 2, ga)]; // Create a shallow copy
+              newArray.pop(); // Remove the last item
+              newArray.splice(7, 0, "-"); // Add 'x' at the 7th position (index 7)
+
+              return newArray.map((item, index) => (
+                <td key={index}>
+                  <div className="pb-2 text-[yellow]">
                     {index < 7 ? `-` : item}
                   </div>
                 </td>
-              );
-            })}
+              ));
+            })()}
           </tr>
           <tr>
             <td>3x - 25% Buff</td>
