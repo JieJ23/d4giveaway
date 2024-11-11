@@ -33,14 +33,17 @@ function calculateMW(baseNum, hit, ga) {
       startingValue += extra;
       recordValue = startingValue.toFixed(1);
       obj.push(recordValue);
+      continue;
     } else if (i === 7 && hit >= 2) {
       startingValue += extra;
       recordValue = startingValue.toFixed(1);
       obj.push(recordValue);
+      continue;
     } else if (i === 11 && hit >= 3) {
       startingValue += extra;
       recordValue = startingValue.toFixed(1);
       obj.push(recordValue);
+      continue;
     } else {
       startingValue += standard;
       recordValue = startingValue.toFixed(1);
@@ -143,7 +146,9 @@ export default function Calculator() {
             {calculateMW(value, 1, ga).map((item, index) => {
               return (
                 <td>
-                  <div className=" pb-2 text-[cyan]">{item}</div>
+                  <div className=" pb-2 text-[cyan]">
+                    {index < 3 ? `-` : item}
+                  </div>
                 </td>
               );
             })}
@@ -153,7 +158,9 @@ export default function Calculator() {
             {calculateMW(value, 2, ga).map((item, index) => {
               return (
                 <td>
-                  <div className=" pb-2 text-[yellow]">{item}</div>
+                  <div className=" pb-2 text-[yellow]">
+                    {index < 7 ? `-` : item}
+                  </div>
                 </td>
               );
             })}
@@ -163,7 +170,9 @@ export default function Calculator() {
             {calculateMW(value, 3, ga).map((item, index) => {
               return (
                 <td>
-                  <div className=" pb-2 text-[orange]">{item}</div>
+                  <div className=" pb-2 text-[orange]">
+                    {index < 11 ? `-` : item}
+                  </div>
                 </td>
               );
             })}
