@@ -12,11 +12,8 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Router>
       <Routes>
-        <Route path="/" element={<Playground />} />
-        <Route
-          path="/MasterworkingCalculator"
-          element={<MasterworkingCalculator />}
-        />
+        <Route path="/" element={<MasterworkingCalculator />} />
+        <Route path="/Playground" element={<Playground />} />
 
         {/* <Route path="/Playground" element={<Playground />} /> */}
       </Routes>
