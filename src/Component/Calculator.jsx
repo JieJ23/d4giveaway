@@ -136,7 +136,7 @@ export default function Calculator() {
 
               return newArray.map((item, index) => (
                 <td key={index}>
-                  <div className="py-2">{item}</div>
+                  <div className="py-2 w-[50px]">{item}</div>
                 </td>
               ));
             })()}
