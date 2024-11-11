@@ -1,7 +1,6 @@
-import SeasonPass from "../Parts/SeasonPass";
-import Items from "../Parts/Items";
-import { Header } from "../Component/Header";
 import { Footer } from "../Component/Footer";
+import { Header } from "../Component/Header";
+import Calculator from "../Component/Calculator";
 
 export default function Playground() {
   return (
@@ -13,7 +12,7 @@ export default function Playground() {
       />
       <Header />
       {/*  */}
-      <Items />
+      <Calculator />
       {/*  */}
       <Footer />
     </main>
