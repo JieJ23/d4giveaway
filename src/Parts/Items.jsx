@@ -87,7 +87,7 @@ export default function Items() {
       <section className="flex justify-center py-16">
         <div className={`relative w-[400px] flex justify-center items-center`}>
           {switchColor(category)}
-          <div className="absolute top-4 right-6 h-[110px] w-[100px]">
+          <div className="absolute top-4 right-6 h-[110px] w-[100px] overflow-hidden">
             <img src={imagePreview} />
           </div>
           <section className="z-30 h-full w-full p-6">
