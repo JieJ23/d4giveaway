@@ -14,6 +14,7 @@ export default function Playground() {
       <Header />
       {/*  */}
       <Items />
+      {/* <SeasonPass /> */}
       {/*  */}
       <Footer />
     </main>

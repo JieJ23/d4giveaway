@@ -12,7 +12,7 @@ function CheckIcon() {
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={2}
-      stroke="currentColor"
+      stroke="white"
       className="h-3 w-3"
     >
       <path
@@ -29,282 +29,115 @@ export default function SeasonPass() {
     <section className="flex flex-wrap justify-center pt-4 gap-10">
       <Card
         variant="gradient"
-        className="w-full max-w-[450px] p-8 bg-transparent backdrop-blur-md text-white border-[1px] border-white/30 relative"
+        className="w-full max-w-[650px] p-8 px-5 bg-transparent backdrop-blur-sm text-white border-[1px] border-white/30 relative"
       >
         <div
-          className="absolute h-full w-full bg-cover -z-10 bg-center top-0 left-0 rounded-xl opacity-20"
-          style={{ backgroundImage: "url('/deluxe.png')" }}
+          className="absolute h-full w-full bg-contain -z-10 bg-center top-0 left-0 rounded-xl opacity-40"
+          style={{ backgroundImage: "url('/expan.png')" }}
         />
         <CardHeader
           floated={false}
           shadow={false}
           color="transparent"
-          className="m-0 mb-8 rounded-none border-b border-white/10 pb-8 text-center"
+          className="m-0 mb-8 rounded-none pb-8 text-center"
         >
-          <img src="/d4logo.png" className="w-[250px] mx-auto" />
+          <img src="/diablo4.png" className="w-[250px] mx-auto" />
           <Typography
             variant="h1"
             color="white"
-            className="mt-6 flex justify-center gap-1 text-7xl font-normal font-customCin"
+            className="mt-6 flex justify-center gap-1 text-7xl font-normal font-customExo"
           >
-            <span className="mt-2 text-2xl">$</span>109{" "}
+            <span className="mt-2 text-2xl font-customExo">$</span>29{" "}
             <span className="self-end text-2xl">.99</span>
           </Typography>
-          <Typography className="text-white font-customCin">
-            Ultimate Season Pass
+          <Typography className="text-white font-customExo">
+            Season 7 DLC: Reawakening the Force
           </Typography>
         </CardHeader>
-        <CardBody className="p-0 ">
-          <ul className="flex flex-col gap-4">
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin text-[13px]">
-                Includes all benefits from the Deluxe and Standard editions,
-                plus:
+        <CardBody className="p-0 flex gap-2">
+          <ul className="flex flex-col gap-2 w-[45%]">
+            <li className="flex items-start">
+              <img src="affix2.png" className="w-[25px]" />
+              <Typography className="font-normal font-customExo text-[13px]">
+                New classes: the Monk and the Paladin.
               </Typography>
             </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin text-[13px]">
-                10000 Platinum
+            <li className="flex items-start">
+              <img src="affix2.png" className="w-[25px]" />
+              <Typography className="font-normal font-customExo text-[13px]">
+                New Transcendencies: Each base class branches into two
+                Transcendency classes, totaling 16 Transcendency classes.
               </Typography>
             </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin text-[13px]">
-                +200% Experience Boost
+            <li className="flex items-start">
+              <img src="affix2.png" className="w-[25px]" />
+              <Typography className="font-normal font-customExo text-[13px]">
+                Two additional chapters added to the campaign: final battle
+                against the three Greater Evils.
               </Typography>
             </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin text-[13px]">
-                Expand maximum Paragon Boards to 9
+            <li className="flex items-start">
+              <img src="affix2.png" className="w-[25px]" />
+              <Typography className="font-normal font-customExo text-[13px]">
+                The restrictions on runewords have been lifted, no more limiting
+                to 2 runewords.
               </Typography>
             </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin text-[13px]">
-                Gain an additional 100 Paragon levels
+            <li className="flex items-start">
+              <img src="affix2.png" className="w-[25px]" />
+              <Typography className="font-normal font-customExo text-[13px]">
+                The limitation of five Paragon boards has been removed.
               </Typography>
             </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin text-[13px]">
-                Access to the Armory
-              </Typography>
-            </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin text-[13px]">
-                Access Your stash from anywhere
-              </Typography>
-            </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin text-[13px]">
-                Increase Temper Limit by 2x
-              </Typography>
-            </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin text-[13px]">
-                Reduce masterwork material requirements by 50%
-              </Typography>
-            </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin text-[13px]">
-                Glyphs experience increased by 100% and shared across all
-                characters
-              </Typography>
-            </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin text-[13px]">
-                For the full list of benefits, please refer to our VIP handbook
+            <li className="flex items-start">
+              <img src="affix2.png" className="w-[25px]" />
+              <Typography className="font-normal font-customExo text-[13px]">
+                All previous bug builds have been reinstated across all classes,
+                restoring their lost power to every class.
               </Typography>
             </li>
           </ul>
-        </CardBody>
-      </Card>
-      <Card
-        variant="gradient"
-        className="w-full max-w-[450px] p-8 bg-transparent backdrop-blur-md text-white border-[1px] border-white/30 relative"
-      >
-        <div
-          className="absolute h-full w-full bg-cover -z-10 bg-center top-0 left-0 rounded-xl opacity-20"
-          style={{ backgroundImage: "url('/ultimate.png')" }}
-        />
-        <CardHeader
-          floated={false}
-          shadow={false}
-          color="transparent"
-          className="m-0 mb-8 rounded-none border-b border-white/10 pb-8 text-center"
-        >
-          <img src="/d4logo.png" className="w-[250px] mx-auto" />
-          <Typography
-            variant="h1"
-            color="white"
-            className="mt-6 flex justify-center gap-1 text-7xl font-normal font-customCin"
-          >
-            <span className="mt-2 text-2xl">$</span>89{" "}
-            <span className="self-end text-2xl">.99</span>
-          </Typography>
-          <Typography className="text-white font-customCin">
-            Deluxe Season Pass
-          </Typography>
-        </CardHeader>
-        <CardBody className="p-0 ">
-          <ul className="flex flex-col gap-4">
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin text-[13px]">
-                Includes all benefits from the Deluxe and Standard editions,
-                plus:
+          <ul className="flex flex-col gap-2 w-[50%]">
+            <li className="flex items-start">
+              <img src="affix2.png" className="w-[25px]" />
+              <Typography className="font-normal font-customExo text-[13px]">
+                The new Armory system enables importing and exporting to
+                third-party resources.
               </Typography>
             </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin text-[13px]">
-                7000 Platinum
+            <li className="flex items-start">
+              <img src="affix2.png" className="w-[25px]" />
+              <Typography className="font-normal font-customExo text-[13px]">
+                New Endgame: Global Map, More details will be available shortly.
               </Typography>
             </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin text-[13px]">
-                +50% Experience Boost
+            <li className="flex items-start">
+              <img src="affix2.png" className="w-[25px]" />
+              <Typography className="font-normal font-customExo text-[13px]">
+                Comprehensively redesigned all monster types and Torment bosses.
               </Typography>
             </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin text-[13px]">
-                Expand maximum Paragon Boards to 7
+            <li className="flex items-start">
+              <img src="affix2.png" className="w-[25px]" />
+              <Typography className="font-normal font-customExo text-[13px]">
+                Expanded the Sanctuary universe with five new regions accessible
+                to all players, featuring new monster types and Torment bosses.
               </Typography>
             </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin text-[13px]">
-                Gain an additional 50 Paragon levels
+            <li className="flex items-start">
+              <img src="affix2.png" className="w-[25px]" />
+              <Typography className="font-normal font-customExo text-[13px]">
+                The skill trees have been fully revamped, providing enhanced
+                build diversity and customization options.
               </Typography>
             </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin text-[13px]">
-                Increase stash size by 10 slots
-              </Typography>
-            </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin text-[13px]">
-                Ancestral items guaranteed to have maximum aspects
-              </Typography>
-            </li>
-          </ul>
-        </CardBody>
-      </Card>
-      <Card
-        variant="gradient"
-        className="w-full max-w-[450px] p-8 bg-transparent backdrop-blur-md text-white border-[1px] border-white/30 relative"
-      >
-        <div
-          className="absolute h-full w-full bg-cover -z-10 bg-center top-0 left-0 rounded-xl opacity-20"
-          style={{ backgroundImage: "url('/standard.png')" }}
-        />
-        <CardHeader
-          floated={false}
-          shadow={false}
-          color="transparent"
-          className="m-0 mb-8 rounded-none border-b border-white/10 pb-8 text-center"
-        >
-          <img src="/d4logo.png" className="w-[250px] mx-auto" />
-          <Typography
-            variant="h1"
-            color="white"
-            className="mt-6 flex justify-center gap-1 text-7xl font-normal font-customCin"
-          >
-            <span className="mt-2 text-2xl">$</span>49{" "}
-            <span className="self-end text-2xl">.99</span>
-          </Typography>
-          <Typography className="text-white font-customCin">
-            Standard Season Pass
-          </Typography>
-        </CardHeader>
-        <CardBody className="p-0 ">
-          <ul className="flex flex-col gap-4">
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin">
-                Access to the Season Pass
-              </Typography>
-            </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin">
-                6000 Platinum
-              </Typography>
-            </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin">
-                +25% Experience Boost
-              </Typography>
-            </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin">
-                Expand maximum Paragon Boards to 6
-              </Typography>
-            </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-full border border-white/20 bg-white/20 p-1 bg-[#013220]">
-                <CheckIcon />
-              </span>
-              <Typography className="font-normal font-customCin">
-                One Premium Battle Pass Token
+            <li className="flex items-start">
+              <img src="affix2.png" className="w-[25px]" />
+              <Typography className="font-normal font-customExo text-[13px]">
+                Other Quality of Life improvements such as: Tempering an item
+                now offers the option to preserve its current stats. .
+                Masterwork rerolls will only reset to the last checkpoint, such
+                as 0, 4, or 8.
               </Typography>
             </li>
           </ul>
